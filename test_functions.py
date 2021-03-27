@@ -37,13 +37,13 @@ class TestFunctions(unittest.TestCase):
         assert Functions.getBMICategory(50.0) == "obese"
 
     def test_retirementAgeCalculation(self):
-        assert math.isclose(Functions.getBMI(25,65000,10,1500000),  96, rel_tol = 0)
-        assert math.isclose(Functions.getBMI(45,100000,15,500000), 70, rel_tol = 0)
-        assert math.isclose(Functions.getBMI(10,100000,12,700000), 54, rel_tol = 0)
-        assert math.isclose(Functions.getBMI(20,0,50,600000), sys.maxsize, rel_tol = 0)
-        assert math.isclose(Functions.getBMI(60,1,0,3000000), sys.maxsize, rel_tol = 0)
-        assert math.isclose(Functions.getBMI(80,100000,100,0), 80, rel_tol = 0)
-        assert math.isclose(Functions.getBMI(100,50,57,1000000), 26091, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(25,65000,10,1500000),  96, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(45,100000,15,500000), 70, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(10,100000,12,700000), 54, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(20,0,50,600000), sys.maxsize, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(60,1,0,3000000), sys.maxsize, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(80,100000,100,0), 80, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(100,50,57,1000000), 26091, rel_tol = 0)
 
     def test_retirementAgeCategory(self):
         assert Functions.getRetirementCategory(70.0) == "will meet"
