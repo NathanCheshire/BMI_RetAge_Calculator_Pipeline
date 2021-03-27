@@ -4,7 +4,6 @@ import sys
 import unittest
 
 ##AUTOMATED TESTS##############################
-
 class UnitTester(unittest.TestCase):
 
     def setUp(self):
@@ -13,10 +12,8 @@ class UnitTester(unittest.TestCase):
     def tearDown(self):
         print("unit test teardown")
         pass
-    
 
-##MANUAL TESTS#################################
-
+#Pytests
 class TestFunctions(unittest.TestCase):
     def test_bmiCalculation(self):
         assert math.isclose(Functions.getBMI(5,9,141),21.323, rel_tol = 0.001)
@@ -37,7 +34,7 @@ class TestFunctions(unittest.TestCase):
         assert Functions.getBMICategory(50.0) == "obese"
 
     def test_retirementAgeCalculation(self):
-        assert math.isclose(Functions.getRetirementAge(25,65000,10,1500000),  96, rel_tol = 0)
+        assert math.isclose(Functions.getRetirementAge(25,65000,10,1500000),  196, rel_tol = 0)
         assert math.isclose(Functions.getRetirementAge(45,100000,15,500000), 70, rel_tol = 0)
         assert math.isclose(Functions.getRetirementAge(10,100000,12,700000), 54, rel_tol = 0)
         assert math.isclose(Functions.getRetirementAge(20,0,50,600000), sys.maxsize, rel_tol = 0)
@@ -52,3 +49,13 @@ class TestFunctions(unittest.TestCase):
         assert Functions.getRetirementCategory(100.0) == "will not meet"
         assert Functions.getRetirementCategory(100.1) == "will not meet"
         assert Functions.getRetirementCategory(150.0) == "will not meet"
+
+##MANUAL TESTS#################################
+
+def executeTests():
+    print("Starting tests...")
+    test_functions.bmiCategoryTest
+    test_functions.bmiCalculationTest
+    test_functions.retirementAgeCalculationTest
+    test_functions.retirementAgeCategoryTest
+    print("Tests finished")

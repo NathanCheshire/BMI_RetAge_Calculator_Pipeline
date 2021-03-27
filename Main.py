@@ -1,8 +1,6 @@
 import Functions
-import Tester
 
-def webMain():
-
+def mainWeb():
     return 0
 
 def mainCLI():
@@ -62,13 +60,5 @@ def mainCLI():
         elif (userInput == "3"):
             print("Exiting program")
             break
-
-def executeTests():
-    print("Starting tests...")
-    Tester.bmiCategoryTest
-    Tester.bmiCalculationTest
-    Tester.retirementAgeCalculationTest
-    Tester.retirementAgeCategoryTest
-    print("Tests finished")
     
 mainCLI()
