@@ -14,7 +14,7 @@ class UnitTester(unittest.TestCase):
         pass
 
 #Pytests
-class TestFunctions(unittest.TestCase):
+class test_functions(unittest.TestCase):
     def test_bmiCalculation(self):
         assert math.isclose(Functions.getBMI(5,9,141),21.323, rel_tol = 0.001)
         assert math.isclose(Functions.getBMI(4,11,150),31.026, rel_tol = 0.001)
@@ -54,8 +54,8 @@ class TestFunctions(unittest.TestCase):
 
 def executeTests():
     print("Starting tests...")
-    TestFunctions.bmiCategoryTest
-    TestFunctions.bmiCalculationTest
-    TestFunctions.retirementAgeCalculationTest
-    TestFunctions.retirementAgeCategoryTest
+    test_functions.test_bmiCalculation
+    test_functions.test_bmiCategory
+    test_functions.test_retirementAgeCalculation
+    test_functions.test_retirementAgeCategory
     print("Tests finished")
