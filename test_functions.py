@@ -18,9 +18,6 @@ class UnitTester(unittest.TestCase):
 ##MANUAL TESTS#################################
 
 class TestFunctions(unittest.TestCase):
-    def __init__(self):
-        print("TesterFunctions class init")
-
     def test_bmiCalculation(self):
         assert math.isclose(Functions.getBMI(5,9,141),21.323, rel_tol = 0.001)
         assert math.isclose(Functions.getBMI(4,11,150),31.026, rel_tol = 0.001)
