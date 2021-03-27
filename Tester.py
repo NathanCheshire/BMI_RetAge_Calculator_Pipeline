@@ -1,6 +1,21 @@
 import Functions
 import math
 import sys
+import unittest
+
+##AUTOMATED TESTS#############################
+
+class UnitTester(unittest.TestCase):
+
+    def setUp(self):
+        print("Unit test setup")
+        pass
+    def tearDown(self):
+        print("unit test teardown")
+        pass
+    
+
+##MANUAL TESTS################################
 
 def bmiCalculationTest():
     assert math.isclose(Functions.getBMI(5,9,141),21.323, rel_tol = 0.001)

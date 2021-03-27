@@ -1,7 +1,11 @@
 import Functions
 import Tester
 
-def main():
+def webMain():
+
+    return 0
+
+def mainCLI():
     while True:
         print("Enter your choice:\n(1) Body Mass Index Calculator\n(2) Retirement Age Calculator\n(3) exit")
         userInput = input(">> ")
@@ -67,4 +71,4 @@ def executeTests():
     Tester.retirementAgeCategoryTest
     print("Tests finished")
     
-main()
+mainCLI()
