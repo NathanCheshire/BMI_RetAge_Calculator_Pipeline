@@ -54,8 +54,8 @@ class TestFunctions(unittest.TestCase):
 
 def executeTests():
     print("Starting tests...")
-    test_functions.bmiCategoryTest
-    test_functions.bmiCalculationTest
-    test_functions.retirementAgeCalculationTest
-    test_functions.retirementAgeCategoryTest
+    TestFunctions.bmiCategoryTest
+    TestFunctions.bmiCalculationTest
+    TestFunctions.retirementAgeCalculationTest
+    TestFunctions.retirementAgeCategoryTest
     print("Tests finished")
