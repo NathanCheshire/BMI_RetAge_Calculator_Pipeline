@@ -17,11 +17,11 @@ def send():
 
     #what if they entered strings?
     if (not feet.isdigit()):
-        return render_template('app.html',bmi="Your feet value must be a number")
+        return render_template('app.html',bmi="Your feet value must be an integer")
     elif (not inches.isdigit()):
-        return render_template('app.html',bmi="Your inches value must be a number")
+        return render_template('app.html',bmi="Your inches value must be an integer")
     elif (not pounds.isdigit()):
-        return render_template('app.html',bmi="Your pounds value must be a number")
+        return render_template('app.html',bmi="Your pounds value must be an integer")
     
     #cast to data types
     feet = int(feet)
@@ -50,13 +50,13 @@ def sendRetAge():
 
     #what if they entered strings?
     if (not age.isdigit()):
-        return render_template('app.html',retirementAge="Your age value must be a number")
+        return render_template('app.html',retirementAge="Your age value must be an integer")
     elif (not anualSalary.isdigit()):
-        return render_template('app.html',retirementAge="Your salary value must be a number")
+        return render_template('app.html',retirementAge="Your salary value must be an integer")
     elif (not percentSasved.isdigit()):
-        return render_template('app.html',retirementAge="Your percent saved value must be a number")
+        return render_template('app.html',retirementAge="Your percent saved value must be an integer")
     elif (not desiredSavings.isdigit()):
-        return render_template('app.html',retirementAge="Your desired savings value must be a number")
+        return render_template('app.html',retirementAge="Your desired savings value must be an integer")
 
     #cast to data types
     age = float(age)
@@ -76,7 +76,5 @@ def sendRetAge():
         return render_template('app.html',retirementAge=
          str(Functions.getRetirementAge(age,anualSalary,percentSasved,desiredSavings))
         + " (" + str(Functions.getRetirementCategory(Functions.getRetirementAge(age,anualSalary,percentSasved,desiredSavings))) + ")")
-
-    #there's a bug where the right value is displayed in the wrong alert box
  
 app.run(debug = True, host='localhost', port=5000)
