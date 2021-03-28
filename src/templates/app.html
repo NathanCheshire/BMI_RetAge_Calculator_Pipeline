@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+
+    
+    <style>
+        .alert {
+          background: rgb(78, 123, 219);
+          padding: 1rem;
+          text-align: center;
+          font-weight: bold;
+          border-radius: 5px;
+          color: white;
+          margin: 1rem;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>Firebase BMI and Retirement Age Calculator</b></h1>
+        <h2>By ✌ Nathan Cheshire ✌</h2>
+        <h3>BMI Calculator</h3>
+    </div>
+
+    <div class="container">
+        <form action="/getbmi" method="POSTBMI">
+          <label for="Feet">Feet</label>
+          <input
+            type="text"
+            placeholder="Height (feet)"
+            class="u-full-width"
+            name="feet"
+          />
+  
+          <label for="Inches">Inches</label>
+          <input
+            type="text"
+            placeholder="Height (inches)"
+            class="u-full-width"
+            name="inches"
+          />
+
+          <label for="Pounds">Pounds</label>
+          <input
+            type="text"
+            placeholder="Weight (pounds)"
+            class="u-full-width"
+            name="pounds"
+          />
+  
+          <input type="submit" value="Get BMI" id="calc_btn_bmi" />
+          <br />
+          <div class="alert">
+            {{ bmi }}
+          </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <form action="/getretirementage" method="POSTRETAGE">
+          <label for="Age">Age</label>
+          <input
+            type="text"
+            placeholder="Age (years)"
+            class="u-full-width"
+            name="age"
+          />
+  
+          <label for="anualSalary">Anual Salary</label>
+          <input
+            type="text"
+            placeholder="Anual Salary (dollars)"
+            class="u-full-width"
+            name="anualSalary"
+          />
+
+          <label for="percentSaved">Percent Saved</label>
+          <input
+            type="text"
+            placeholder="Percent of anual salary saved"
+            class="u-full-width"
+            name="percentSasved"
+          />
+
+          <label for="desiredSavings">Desired Savings</label>
+          <input
+            type="text"
+            placeholder="Desired Savings (dollars)"
+            class="u-full-width"
+            name="desiredSavings"
+          />
+  
+          <input type="submit" value="Get Retirement Age" id="calc_btn_ret_age" />
+          <br />
+          <div class="alert">
+            {{ retirementAge }}
+          </div>
+        </form>
+    </div>
+
+</body>
+</html>
