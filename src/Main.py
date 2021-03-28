@@ -55,7 +55,7 @@ def mainCLI():
             print(" (",Functions.getBMICategory(bmi),")")
 
         elif (userInput == "2"):
-            break
+            break #todo implement me still for complete CLI and web app
 
         elif (userInput == "3"):
             print("Exiting program")

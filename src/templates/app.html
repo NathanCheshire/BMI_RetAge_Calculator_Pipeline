@@ -10,7 +10,17 @@
 
     
     <style>
-        .alert {
+        .alertbmi {
+          background: rgb(78, 123, 219);
+          padding: 1rem;
+          text-align: center;
+          font-weight: bold;
+          border-radius: 5px;
+          color: white;
+          margin: 1rem;
+        }
+
+        .alertretage {
           background: rgb(78, 123, 219);
           padding: 1rem;
           text-align: center;
@@ -56,7 +66,7 @@
   
           <input type="submit" value="Get BMI"/>
           <br />
-          <div class="alert">
+          <div class="alertbmi">
             {{ bmi }}
           </div>
         </form>
@@ -98,7 +108,7 @@
   
           <input type="submit" value="Get Retirement Age"/>
           <br />
-          <div class="alert">
+          <div class="alertretage">
             {{ retirementAge }}
           </div>
         </form>

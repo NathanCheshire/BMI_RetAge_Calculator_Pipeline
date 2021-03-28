@@ -16,11 +16,11 @@ def send():
     pounds = str(request.form['pounds'])
 
     #what if they entered strings?
-    if (not feet.isdigit):
+    if (not feet.isdigit()):
         return render_template('app.html',bmi="Your feet value must be a number")
-    elif (not inches.isdigit):
+    elif (not inches.isdigit()):
         return render_template('app.html',bmi="Your inches value must be a number")
-    elif (not pounds.isdigit):
+    elif (not pounds.isdigit()):
         return render_template('app.html',bmi="Your pounds value must be a number")
     
     #cast to data types
@@ -35,7 +35,8 @@ def send():
         return render_template('app.html',bmi="Surely you weight something")
     elif ((feet * 12 + inches > 0) and pounds > 0):
         return render_template('app.html',bmi=
-        ("%.3f" % Functions.getBMI(feet,inches,pounds)) + " BMI")
+        ("%.3f" % Functions.getBMI(feet,inches,pounds)) 
+        + " (" + Functions.getBMICategory(Functions.getBMI(feet,inches,pounds)) + ")")
     else:
         return render_template('app.html',bmi="")
 
@@ -48,14 +49,14 @@ def sendRetAge():
     desiredSavings = str(request.form['desiredSavings'])
 
     #what if they entered strings?
-    if (not age.isdigit):
-        return render_template('app.html',bmi="Your age value must be a number")
-    elif (not anualSalary.isdigit):
-        return render_template('app.html',bmi="Your salary value must be a number")
-    elif (not percentSasved.isdigit):
-        return render_template('app.html',bmi="Your percetn saved value must be a number")
-    elif (not desiredSavings.isdigit):
-        return render_template('app.html',bmi="Your desired savings value must be a number")
+    if (not age.isdigit()):
+        return render_template('app.html',retirementAge="Your age value must be a number")
+    elif (not anualSalary.isdigit()):
+        return render_template('app.html',retirementAge="Your salary value must be a number")
+    elif (not percentSasved.isdigit()):
+        return render_template('app.html',retirementAge="Your percent saved value must be a number")
+    elif (not desiredSavings.isdigit()):
+        return render_template('app.html',retirementAge="Your desired savings value must be a number")
 
     #cast to data types
     age = float(age)
@@ -63,8 +64,19 @@ def sendRetAge():
     percentSasved = float(percentSasved)
     desiredSavings = float(desiredSavings)
 
-    #make sure things that need to be greater than 0 are and if so, return calculation and category
+    if (age <= 0):
+        return render_template('app.html',retirementAge="I'm pretty sure you're at least 12 years old")
+    elif (anualSalary <= 0):
+        return render_template('app.html',retirementAge="If you don't make any money, then I can't do much for you")
+    elif (percentSasved <= 0):
+        return render_template('app.html',retirementAge="If you don't plan on saving any money, may God have mercy on your soul")
+    elif (desiredSavings <= 0):
+        return render_template('app.html',retirementAge="If your desired savings is $0, then you've already hit your goal! Woo Hoo!")
+    else:
+        return render_template('app.html',retirementAge=
+         str(Functions.getRetirementAge(age,anualSalary,percentSasved,desiredSavings))
+        + " (" + str(Functions.getRetirementCategory(Functions.getRetirementAge(age,anualSalary,percentSasved,desiredSavings))) + ")")
 
-    return render_template('app.html',retirementAge="null still working")
+    #there's a bug where the right value is displayed in the wrong alert box
  
 app.run(debug = True, host='localhost', port=5000)
