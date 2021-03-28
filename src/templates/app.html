@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +29,7 @@
     </div>
 
     <div class="container">
-        <form action="/getbmi" method="POSTBMI">
+        <form action="/getbmi" method="POST">
           <label for="Feet">Feet</label>
           <input
             type="text"
@@ -53,7 +54,7 @@
             name="pounds"
           />
   
-          <input type="submit" value="Get BMI" id="calc_btn_bmi" />
+          <input type="submit" value="Get BMI"/>
           <br />
           <div class="alert">
             {{ bmi }}
@@ -62,7 +63,7 @@
     </div>
 
     <div class="container">
-        <form action="/getretirementage" method="POSTRETAGE">
+        <form action="/getretirementage" method="POST">
           <label for="Age">Age</label>
           <input
             type="text"
@@ -95,7 +96,7 @@
             name="desiredSavings"
           />
   
-          <input type="submit" value="Get Retirement Age" id="calc_btn_ret_age" />
+          <input type="submit" value="Get Retirement Age"/>
           <br />
           <div class="alert">
             {{ retirementAge }}

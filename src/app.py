@@ -8,32 +8,34 @@ def main():
     return render_template('app.html')
 
 #submit bmi
-@app.route('/getbmi',methods=["POSTBMI"])
+@app.route('/getbmi',methods=["POST"])
 def send():
-    if request.method == 'POSTBMI':
-        #pull data
-        feet = int(request.form['feet'])
-        inches = int(request.form['inches'])
-        pounds = float(request.form['pounds'])
+    #pull data
+    feet = int(request.form['feet'])
+    inches = int(request.form['inches'])
+    pounds = float(request.form['pounds'])
 
-        if (feet * 12 + inches <= 0):
-            return render_template('app.html',bmi="Your total height must be greater than 0")
-        elif (pounds <= 0):
-            return render_template('app.html',bmi="Surely you weight something")
-        elif ((feet * 12 + inches > 0) and pounds > 0):
-            return render_template('app.html',bmi=("%.3f" % Functions.getBMI(feet,inches,pounds)) + " BMI")
-        else:
-             return render_template('app.html',bmi="")
+    ##what if they entered strings?
 
-@app.route('/getretirementage',methods=["POSTRETAGE"])
+    if (feet * 12 + inches <= 0):
+        return render_template('app.html',bmi="Your total height must be greater than 0")
+    elif (pounds <= 0):
+        return render_template('app.html',bmi="Surely you weight something")
+    elif ((feet * 12 + inches > 0) and pounds > 0):
+        return render_template('app.html',bmi=("%.3f" % Functions.getBMI(feet,inches,pounds)) + " BMI")
+    else:
+        return render_template('app.html',bmi="")
+
+@app.route('/getretirementage',methods=["POST"])
 def sendRetAge():
-    if request.method == 'POSTRETAGE':
-        #pull data
-        age = float(request.form['age'])
-        anualSalary = float(request.form['anualSalary'])
-        percentSasved = float(request.form['percentSasved'])
-        desiredSavings = float(request.form['desiredSavings'])
+    #pull data
+    age = float(request.form['age'])
+    anualSalary = float(request.form['anualSalary'])
+    percentSasved = float(request.form['percentSasved'])
+    desiredSavings = float(request.form['desiredSavings'])
 
-        return render_template('app.html',retirementAge="")
+    #validate input here
+
+    return render_template('app.html',retirementAge="null still working")
  
 app.run(debug = True, host='localhost', port=5000)
