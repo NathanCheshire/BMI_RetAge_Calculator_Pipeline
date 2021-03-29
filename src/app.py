@@ -13,7 +13,7 @@ def send():
     #pull data
     feet = str(request.form['feet'])
     inches = str(request.form['inches'])
-    pounds = str(request.form['pounds'])
+    pounds = str(request.form['pounds']) 
 
     #what if they entered strings?
     if (not feet.isdigit()):
