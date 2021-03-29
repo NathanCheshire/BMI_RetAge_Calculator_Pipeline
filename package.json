@@ -1,0 +1,21 @@
+{
+  "name": "TDD_CD_Flask",
+  "version": "1.0.0",
+  "description": "3/27/21\r ## Due: \r April 16, Midnight\r ## Objective:\r Develop testing and deployment plans that enable continuous deployment of an existing\r software system that is extended for web access. Create automated acceptance tests (end-to-end\r testing) and integration (regression) tests.\r ## Scenario:\r You have been asked to create a web interface for the application you created for Assignment2. The VP of Engineering at your firm also wants to ensure that you can continuously deploy\r new features, bug fixes, and changes to the application. She also wants to ensure the quality of\r the overall system by adopting a quality assurance and test plan.\r You will augment the existing application and make it accessible via a web interface and build\r & document a deployment pipeline for the system using various tools and cloud infrastructure.\r ## Reqs.\r Web Interface - Add a web interface to your command line app and make it accessible via the\r Google Cloud Platform (e.g., container engine [vm], Google App Engine, etc.).\r Deployment Pipeline - Setup a deployment pipeline using continuous integration and delivery\r tools (can make your GitHub project public).\r ## Report\r submit as a PDF\r Discuss development pipeline and challenges\r Detailed setup and execution instructions\r Test cases for manual testing\r Disucss automated testing unit\r Tool description for pipeline\r Google cloud platform (app needs to be accessible via this)\r Code coverage report, include output from coverage tool",
+  "main": "index.js",
+  "scripts": {
+    "postinstall":"npm run install-functions",
+    "install-functions": "cd functions && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanCheshire/TDD_CD_Flask.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanCheshire/TDD_CD_Flask/issues"
+  },
+  "homepage": "https://github.com/NathanCheshire/TDD_CD_Flask#readme"
+}
