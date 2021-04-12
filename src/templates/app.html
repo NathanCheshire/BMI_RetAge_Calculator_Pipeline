@@ -46,6 +46,7 @@
             placeholder="Height (feet)"
             class="u-full-width"
             name="feet"
+            value = "{{feet}}"
           />
   
           <label for="Inches">Inches</label>
@@ -54,6 +55,7 @@
             placeholder="Height (inches)"
             class="u-full-width"
             name="inches"
+            value = "{{inches}}"
           />
 
           <label for="Pounds">Pounds</label>
@@ -62,6 +64,7 @@
             placeholder="Weight (pounds)"
             class="u-full-width"
             name="pounds"
+            value = "{{pounds}}"
           />
 
           <p style="font-weight:initial; font-size:small;">(Total height and weight must be greater than 0)<br/>Underweight: < 18.5<br/>Normal: >= 18.5 and < 25.0<br/>Overweight: >= 25.0 and < 30.0<br/>Obese: >= 30.0</p>
@@ -82,6 +85,7 @@
             placeholder="Age (years)"
             class="u-full-width"
             name="age"
+            value = "{{age}}"
           />
   
           <label for="anualSalary">Anual Salary</label>
@@ -90,6 +94,7 @@
             placeholder="Anual Salary (dollars)"
             class="u-full-width"
             name="anualSalary"
+            value = "{{anualSalary}}"
           />
 
           <label for="percentSaved">Percent Saved</label>
@@ -98,6 +103,7 @@
             placeholder="Percent of anual salary saved"
             class="u-full-width"
             name="percentSasved"
+            value = "{{percentSasved}}"
           />
 
           <label for="desiredSavings">Desired Savings</label>
@@ -106,6 +112,7 @@
             placeholder="Desired Savings (dollars)"
             class="u-full-width"
             name="desiredSavings"
+            value = "{{desiredSavings}}"
           />
           <p style="font-weight:initial; font-size:small;">(All inputs must be greater than zero, death is assumed at 100 years of age)</p>
           <input type="submit" value="Get Retirement Age"/>

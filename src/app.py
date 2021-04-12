@@ -17,28 +17,28 @@ def send():
 
     #what if they entered strings?
     if (not feet.isdigit()):
-        return render_template('app.html',bmi="Your feet value must be an integer")
+        return render_template('app.html',bmi="Your feet value must be an integer",feet = feet, inches = inches, pounds = pounds)
     elif (not inches.isdigit()):
-        return render_template('app.html',bmi="Your inches value must be an integer")
+        return render_template('app.html',bmi="Your inches value must be an integer",feet = feet, inches = inches, pounds = pounds)
     elif (not pounds.isdigit()):
-        return render_template('app.html',bmi="Your pounds value must be an integer")
+        return render_template('app.html',bmi="Your pounds value must be an integer",feet = feet, inches = inches, pounds = pounds)
     
     #cast to data types
     feet = int(feet)
     inches = int(inches)
-    pounds = float(pounds)
+    pounds = int(pounds)
 
     #proper number validation
     if (feet * 12 + inches <= 0):
-        return render_template('app.html',bmi="Your total height must be greater than 0")
+        return render_template('app.html',bmi="Your total height must be greater than 0",feet = feet, inches = inches, pounds = pounds)
     elif (pounds <= 0):
-        return render_template('app.html',bmi="Surely you weight something")
+        return render_template('app.html',bmi="Surely you weight something",feet = feet, inches = inches, pounds = pounds)
     elif ((feet * 12 + inches > 0) and pounds > 0):
         return render_template('app.html',bmi=
         ("%.3f" % Functions.getBMI(feet,inches,pounds)) 
         + " (" + Functions.getBMICategory(Functions.getBMI(feet,inches,pounds)) + ")")
     else:
-        return render_template('app.html',bmi="")
+        return render_template('app.html',bmi="",feet = feet, inches = inches, pounds = int(pounds))
 
 #todo when calculating result, don't remove field values
 #when a field value is wrong, don't remove everything either
@@ -52,13 +52,13 @@ def sendRetAge():
 
     #what if they entered strings?
     if (not age.isdigit()):
-        return render_template('app.html',retirementAge="Your age value must be an integer")
+        return render_template('app.html',retirementAge="Your age value must be an integer", age = age, anualSalary = anualSalary, percentSasved = percentSasved, desiredSavings = desiredSavings)
     elif (not anualSalary.isdigit()):
-        return render_template('app.html',retirementAge="Your salary value must be an integer")
+        return render_template('app.html',retirementAge="Your salary value must be an integer", age = age, anualSalary = anualSalary, percentSasved = percentSasved, desiredSavings = desiredSavings)
     elif (not percentSasved.isdigit()):
-        return render_template('app.html',retirementAge="Your percent saved value must be an integer")
+        return render_template('app.html',retirementAge="Your percent saved value must be an integer", age = age, anualSalary = anualSalary, percentSasved = percentSasved, desiredSavings = desiredSavings)
     elif (not desiredSavings.isdigit()):
-        return render_template('app.html',retirementAge="Your desired savings value must be an integer")
+        return render_template('app.html',retirementAge="Your desired savings value must be an integer", age = age, anualSalary = anualSalary, percentSasved = percentSasved, desiredSavings = desiredSavings)
 
     #cast to data types
     age = float(age)
@@ -67,7 +67,7 @@ def sendRetAge():
     desiredSavings = float(desiredSavings)
 
     if (age <= 0):
-        return render_template('app.html',retirementAge="I'm pretty sure you're at least 12 years old")
+        return render_template('app.html',retirementAge="I'm pretty sure you're at least 12 years old", age = age, anualSalary = anualSalary, percentSasved = percentSasved, desiredSavings = desiredSavings)
     elif (anualSalary <= 0):
         return render_template('app.html',retirementAge="If you don't make any money, then I can't do much for you")
     elif (percentSasved <= 0):
