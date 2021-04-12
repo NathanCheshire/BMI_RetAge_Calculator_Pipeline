@@ -16,6 +16,7 @@ You will augment the existing application and make it accessible via a web inter
 ## Reqs.
 Web Interface - Add a web interface to your command line app and make it accessible via the
 Google Cloud Platform (e.g., container engine [vm], Google App Engine, etc.).
+
 Deployment Pipeline - Setup a deployment pipeline using continuous integration and delivery
 tools (can make your GitHub project public).
 ## Report
