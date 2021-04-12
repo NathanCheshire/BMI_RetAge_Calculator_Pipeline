@@ -40,8 +40,6 @@ def send():
     else:
         return render_template('app.html',bmi="",feet = feet, inches = inches, pounds = int(pounds))
 
-#todo when calculating result, don't remove field values
-#when a field value is wrong, don't remove everything either
 @app.route('/getretirementage',methods=["POST"])
 def sendRetAge():
     #pull data
