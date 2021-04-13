@@ -3,22 +3,14 @@ import math
 import sys
 import unittest
 
-##AUTOMATED TESTS##############################
-class UnitTester(unittest.TestCase):
-
-    def setUp(self):
-        print("Unit test setup")
-        pass
-    def tearDown(self):
-        print("unit test teardown")
-        pass
-
-#Pytests
+# pragma: no cover
 class test_functions(unittest.TestCase):
     def test_bmiCalculation(self):
         assert math.isclose(Functions.getBMI(5,9,141),21.323, rel_tol = 0.001)
         assert math.isclose(Functions.getBMI(4,11,150),31.026, rel_tol = 0.001)
         assert math.isclose(Functions.getBMI(6,2,195),25.639, rel_tol = 0.001)
+        assert math.isclose(Functions.getBMI(6,2,0),0, rel_tol = 0.001)
+        assert math.isclose(Functions.getBMI(0,0,168),sys.maxsize, rel_tol = 0.001)
         
     def test_bmiCategory(self):
         assert Functions.getBMICategory(16.0) == "underweight"
@@ -51,11 +43,12 @@ class test_functions(unittest.TestCase):
         assert Functions.getRetirementCategory(150.0) == "will not meet"
 
 ##MANUAL TESTS#################################
-
+#this is used if you want to manually test these within your IDE
+# pragma: no cover
 def executeTests():
-    print("Starting tests...")
-    test_functions.test_bmiCalculation
-    test_functions.test_bmiCategory
-    test_functions.test_retirementAgeCalculation
-    test_functions.test_retirementAgeCategory
-    print("Tests finished")
+    print("Starting tests...") # pragma: no cover
+    test_functions.test_bmiCalculation # pragma: no cover
+    test_functions.test_bmiCategory # pragma: no cover
+    test_functions.test_retirementAgeCalculation # pragma: no cover
+    test_functions.test_retirementAgeCategory # pragma: no cover
+    print("Tests finished") # pragma: no cover
