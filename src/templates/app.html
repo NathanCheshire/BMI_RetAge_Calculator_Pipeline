@@ -3,10 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href= "{{ url_for('static',filename='style.css') }}">
+    <title>BMI and Retirement Age Calculator</title>
     <style>
-        .alertbmi {
+      .alertbmi {
           background: #3498db;
           padding: 1rem;
           text-align: center;
@@ -17,15 +20,6 @@
           width: 20%;
           left: 400px;
           margin: 1rem;
-        }
-
-        body {
-          justify-content: space-around;
-          align-items: center;
-        }
-      
-        .container {
-          text-align: center;
         }
 
         .btn{
@@ -79,183 +73,108 @@
           height: 0%;
         }
 
-        .custom-field {
-          border: none;
-          -webkit-appearance: none;
-          -ms-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          background: #f2f2f2;
-          padding: 12px;
-          border-radius: 3px;
-          width: 300px;
-          text-align: center;
-          outline: none;
-          font-size: 14px;
-        }
+      body {
+        height: 60vh;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        flex-direction: column;;
+        font-family: sans-serif;
+      }
 
-        .form {
-          width: 10%;
-          position:relative;
-          left: 45%;
-          height: 40px;
-          overflow: hidden;
-        }
+      .form {
+        width: 50%;
+        position:relative;
+        height: 50px;
+        overflow: hidden;
+      }
 
-        .form input {
-          width: 100%;
-          height: 100%;
-          color: #595f6e;
-          padding-top: 15px;
-          border: none;
-          outline: none;
-        }
+      .form input {
+        width: 100%;
+        height: 100%;
+        color: #595f6e;
+        padding-top: 14px;
+        border: none;
+        outline: none;
+        font-size: larger;
+        font-family: sans-serif;
+      }
 
-        .form label {
-          position: absolute;
-          bottom: 0px;
-          left: 0%;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          border-bottom: 1px solid black;
-        }
+      .form label {
+        font-weight: bold;
+        font-family: sans-serif;
+        position: absolute;
+        bottom: 0px;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 2px solid black;
+      }
 
-        .form label::after {
-          content: "";
-          position: absolute;
-          left: 0px;
-          bottom: -1px;
-          height: 100%;
-          width: 100%;
-          border-bottom: 3px solid #5fa8d3;
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
-        }
+      .form label::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -2px;
+        width: 100%;
+        height: 100%;
+        border-bottom: 3px solid #5fa8d3;
+        transform: translateX(-100%);
+        transition: transform 1.0s ease;
+      }
 
-        .content-name {
-          position: absolute;
-          bottom: 5px;
-          left: 0px;
-          transition: all 0.3s ease;
-        }
+      .content-name {
+        position: absolute;
+        bottom: 10px;
+        left: 0px;
+        transition: all 0.5s ease;
+      }
 
-        .form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name {
-          transform: translateY(-100%);
-          font-size: 14px;
-          color: #5fa8d3;
-        }
+      .form input:focus + .label-name .content-name,
+      .form input:valid + .label-name .content-name {
+        transform: translateY(-150%);
+        font-size: 14px;
+        color: #5fa8d3;
+      }
 
-        .form input:focus + .label-name::after, .form input:valid + .label-name::after {
-          transform: translateX(0%);
-        }
-
-      </style>
+      .form input:focus + .label-name::after,
+      .form input:valid + .label-name::after {
+        transform: translateX(0%);
+      }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1><b>BMI and Retirement Age Calculator</b></h1>
-        <h2>Nathan Cheshire</h2>
-        <h3>BMI Calculator</h3>
+    <h1><b>BMI and Retirement Age Calculator</b></h1>
+    <h2>Made by the legendary Nathan Cheshire (🔥 Such Legend 🔥)</h2>
+    <br/><br/>
+    <h3>BMI Calculator</h3>
+    <div class="form">
+      <input type="text" name="feet" value = "{{inches}}" autocompelte="off" required/>
+      <label for="Height (feet)" class="label-name">
+        <span class="content-name">Height (feet)</span>
+      </label>
     </div>
     <br/>
     <div class="form">
-      <input type="text" name="name" autocomplete="off" required/>
-      <label for="name" class="label-name">
-        <span class="content-name">Name</span>
+      <input type="text" name="inches" value = "{{inches}}" autocompelte="off" required/>
+      <label for="Height (inches)" class="label-name">
+        <span class="content-name">Height (inches)</span>
       </label>
     </div>
-    <div class="container">
-        <form action="/getbmi" method="POST">
-          <input
-            class = "custom-field"
-            type="text"
-            placeholder="Height (feet)"
-            name="feet"
-            value = "{{feet}}"
-          />
-  
-          <br/>
-          <input
-          class = "custom-field"
-            type="text"
-            placeholder="Height (inches)"
-            name="inches"
-            value = "{{inches}}"
-          />
-          <br/>
-         
-          <input
-          class = "custom-field"
-            type="text"
-            placeholder="Weight (pounds)"
-            name="pounds"
-            value = "{{pounds}}"
-          />
-
-          <p style="font-weight:initial; font-size:small;">(Total height and weight must be greater than 0)<br/>Underweight: < 18.5<br/>Normal: >= 18.5 and < 25.0<br/>Overweight: >= 25.0 and < 30.0<br/>Obese: >= 30.0</p>
-  
-          
-          <button class="btn btn3">Get BMI</button>
-          <br />
-          <div class="alertbmi">
-            {{ bmi }}
-          </div>
-        </form>
+    <br/>
+    <div class="form">
+      <input type="text" name="pounds" value = "{{pounds}}" autocompelte="off" required/>
+      <label for="Weight (pounds)" class="label-name">
+        <span class="content-name">Weight (pounds)</span>
+      </label>
     </div>
-
-    <div class="container">
-        <form action="/getretirementage" method="POST">
-          
-          <input
-          class = "custom-field"
-            type="text"
-            placeholder="Age (years)"
-            name="age"
-            value = "{{age}}"
-          />
-  
-          <br/>
-          <input
-          class = "custom-field"
-            type="text"
-            placeholder="Anual Salary (dollars)"
-            name="anualSalary"
-            value = "{{anualSalary}}"
-          />
-
-          <br/>
-          <input
-          class = "custom-field"
-            type="text"
-            placeholder="Percent of anual salary saved"
-            name="percentSasved"
-            value = "{{percentSasved}}"
-          />
-
-          <br/>
-          <input
-          class = "custom-field"
-            type="text"
-            placeholder="Desired Savings (dollars)"
-            name="desiredSavings"
-            value = "{{desiredSavings}}"
-          />
-          <p style="font-weight:initial; font-size:small;">(All inputs must be greater than zero, death is assumed at 100 years of age)</p>
-          <button class="btn btn3">Get Retirement Age</button>
-          <br />
-          <div class="alertbmi">
-            {{ retirementAge }}
-          </div>
-        </form>
-    </br>
-    <p style="font-weight: bold; font-size:medium;">Hail State!</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Mississippi_State_Bulldogs_logo.svg/1200px-Mississippi_State_Bulldogs_logo.svg.png" alt="" width="300" height="184">
-</br>
-        <a href="https://github.com/NathanCheshire/TDD_CD_Flask"; >GitHub source code</a>
-        <br/>
-        <br/>
+    <p style="font-weight:initial; text-align: center; font-size:medium;">(Total height and weight must be greater than 0)<br/>Underweight: < 18.5<br/>Normal: >= 18.5 and < 25.0<br/>Overweight: >= 25.0 and < 30.0<br/>Obese: >= 30.0</p>
+    <button class="btn btn3">Get BMI</button>
+    <br/>
+    <div class="alertbmi">
+      {{ bmi }}
     </div>
-
 </body>
 </html>
+<!-- need to figure out button text size, font weight, keeping this same LAF and submiting with flask -->
