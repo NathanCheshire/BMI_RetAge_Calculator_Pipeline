@@ -70,6 +70,8 @@ def sendRetAge():
         return render_template('app.html',retirementAge="If you don't make any money, then I can't do much for you")
     elif (percentSasved <= 0):
         return render_template('app.html',retirementAge="If you don't plan on saving any money, may God have mercy on your soul")
+    elif (percentSasved > 100):
+        return render_template('app.html',retirementAge="You can't save more than you make")
     elif (desiredSavings <= 0):
         return render_template('app.html',retirementAge="If your desired savings is $0, then you've already hit your goal! Woo Hoo!")
     else:
