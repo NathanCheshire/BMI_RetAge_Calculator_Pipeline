@@ -1,13 +1,5 @@
 # Homework 3 and 4 for software QA
 
-## Dates:
-Started: 3/27/21
-
-Finished: 4/12/21
-
-## Due: 
-April 16, Midnight
-
 ## Objective:
 Develop testing and deployment plans that enable continuous deployment of an existing
 software system that is extended for web access. Create automated acceptance tests (end-to-end
