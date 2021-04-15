@@ -39,7 +39,7 @@ Source control - ... 🙄 that's this right here.
 
 Continuous integration - well seeing as I'm the only one writing the code and pushing it to github, requirement accomlished.
 
-Static analysis - pylint is used via a github action on all pushes to the main branch to test all .py files and output the results in the console.
+Static analysis - flake8 is used via a github action on all pushes to the main branch to test all .py files and output the linting results.
 
 Unit testing in python with unittest - these are automatically ran with github actions on push to github.
 
