@@ -28,8 +28,23 @@ Deployment Pipeline - Setup a deployment pipeline using continuous integration a
 tools (can make your GitHub project public).
 
 ## Features of my app
-Unit testing in python with unittest - these are automatically ran with github actions on push to github
+
+### Web Interface
+
+I used the web framework Flask for my python app. I mixed in css within the index.html file so no external css file is referenced.
+
+### Deployment pipeline
+
+Source control - ... 🙄 that's this right here.
+
+Continuous integration - well seeing as I'm the only one writing the code and pushing it to github, requirement accomlished.
+
+Static analysis - pylint is used via a github action on all pushes to the main branch to test all .py files and output the results in the console.
+
+Unit testing in python with unittest - these are automatically ran with github actions on push to github.
 
 Code coverage - I used a github action to run the unit tests and other tests in my code to test the functions. This action finds the code and test coverage and comments on each commit with the percent hit/missed as well as some other statistics. See latest commit to view the message.
 
 Continuous deployment to heroku - upon a push, herou will wait for the unittests to pass, if they pass, it will then deploy the new app to the staging server. I can then go into the heroku dashboard and manually choose to deploy this to the production server.
+
+Manual push to production - within the heroku app, I have to go into the dashboard and deploy the updated webpage resulting from a commit, push, and succesful test, from the staging server to the production server.
