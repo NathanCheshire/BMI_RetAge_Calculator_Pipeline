@@ -47,3 +47,5 @@ jobs:
       uses: peter-evans/commit-comment@v1
       with:
         body: ${{ steps.pytester-cov.outputs.output-table }}
+    - name: Run tests with pytest
+      run: pytest 
