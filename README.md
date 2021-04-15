@@ -27,18 +27,18 @@ I used the web framework Flask for my python app. I mixed in css within the inde
 
 ### Deployment pipeline
 
-Source control - ... 🙄 that's this right here.
+Source control - that's this right here.
 
 Continuous integration - well seeing as I'm the only one writing the code and pushing it to github, requirement accomlished.
 
 Static analysis - flake8 is used via a github action on all pushes to the main branch to test all .py files and output the linting results.
 
-Unit testing in python with unittest - these are automatically ran with github actions on push to github.
+Unit testing in python with unittest - these are automatically executed with a github action on pushes to the main branch.
 
 Code coverage - I used a github action to run the unit tests and other tests in my code to test the functions. This action finds the code and test coverage and comments on each commit with the percent hit/missed as well as some other statistics. See latest commit to view the message.
 
 Continuous deployment to heroku - upon a push, herou will wait for the unittests to pass, if they pass, it will then deploy the new app to the staging server. I can then go into the heroku dashboard and manually choose to deploy this to the production server.
 
-Manual push to production - within the heroku app, I have to go into the dashboard and deploy the updated webpage resulting from a commit, push, and succesful test, from the staging server to the production server.
+Manual push to production - within the heroku app, I have the option to go into the dashboard and deploy the updated webapp (resulting from a commit, push, and succesful test) from the staging server to the production server.
 
 ![""](https://cdn.discordapp.com/attachments/809989018582253568/832122310676578324/unknown.png)
