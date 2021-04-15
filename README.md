@@ -48,3 +48,5 @@ Code coverage - I used a github action to run the unit tests and other tests in 
 Continuous deployment to heroku - upon a push, herou will wait for the unittests to pass, if they pass, it will then deploy the new app to the staging server. I can then go into the heroku dashboard and manually choose to deploy this to the production server.
 
 Manual push to production - within the heroku app, I have to go into the dashboard and deploy the updated webpage resulting from a commit, push, and succesful test, from the staging server to the production server.
+
+![""](https://cdn.discordapp.com/attachments/809989018582253568/832122310676578324/unknown.png)
